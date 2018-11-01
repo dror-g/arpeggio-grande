@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    arpeggio.service: backend
+  name: backend
+spec:
+  ports:
+  - name: "9999"
+    port: 9999
+    targetPort: 9999
+  selector:
+    arpeggio.service: backend
+status:
+  loadBalancer: {}

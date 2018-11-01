@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    arpeggio.service: backend
+  name: backend
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        arpeggio.service: backend
+    spec:
+      containers:
+      - env:
+        image: nihil75/elpro-backend
+        name: backend
+        ports:
+        - containerPort: 9999
+        resources: {}
+      restartPolicy: Always
+status: {}
